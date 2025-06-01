@@ -29,6 +29,7 @@ class _ExpensesState extends State<Expenses> {
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      useSafeArea: true,
       isScrollControlled: true,
       context: context,
       builder: (ctx) {
@@ -68,6 +69,9 @@ class _ExpensesState extends State<Expenses> {
   
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width; // 화면의 너비를 가져옴
+    final height = MediaQuery.of(context).size.height; // 화면의 높이를 가져옴
+
     Widget mainContent = const Center(
       child: Text('No expenses found. Start adding some!'),
     );
@@ -89,14 +93,25 @@ class _ExpensesState extends State<Expenses> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          Chart(expenses: _registerdExpenses),
-          Expanded(
-            child: mainContent,
-          )
-        ],
-      )
+      body: width < 600 
+        ? Column(
+          children: [
+            Chart(expenses: _registerdExpenses),
+            Expanded(
+              child: mainContent,
+            )
+          ],
+        )
+        : Row(
+          children: [
+            Expanded(
+              child: Chart(expenses: _registerdExpenses),
+            ),
+            Expanded(
+              child: mainContent,
+            ),
+          ],
+        ),
     );
   }
 }

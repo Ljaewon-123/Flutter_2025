@@ -1,5 +1,6 @@
 import 'package:expense_tracker_app/widgets/expenses.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 const mainSeedColor = Color.fromARGB(255, 96, 59, 181);
 
@@ -14,6 +15,13 @@ var kDarkColorScheme = ColorScheme.fromSeed(
 );
 
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized(); // 방향 전환 잠그기 
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  //   DeviceOrientation.portraitDown,
+  // ]).then((fn) {
+  //   // In runApp
+  // });
   runApp(
     MaterialApp(
       title: 'Flutter Demo',
