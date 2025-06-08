@@ -38,7 +38,7 @@ class MealDetailsScreen extends StatelessWidget {
             Text(
               'Ingredients', 
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
+                color: Theme.of(context).colorScheme.onSurface,
                 fontWeight: FontWeight.bold
               ),
             ),
@@ -47,14 +47,14 @@ class MealDetailsScreen extends StatelessWidget {
               Text(
                 ingredient,
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground
+                  color: Theme.of(context).colorScheme.onSurface
                 ),
               ),
             const SizedBox(height: 24,),
             Text(
               'Steps', 
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
+                color: Theme.of(context).colorScheme.onSurface,
                 fontWeight: FontWeight.bold
               ),
             ),
@@ -68,7 +68,7 @@ class MealDetailsScreen extends StatelessWidget {
                 step,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground
+                  color: Theme.of(context).colorScheme.onSurface
                 ),
               ),
               )
